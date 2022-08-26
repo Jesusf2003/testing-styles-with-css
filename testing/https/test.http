@@ -1,2 +1,2 @@
 # Ingresar a la página
-POST http://localhost:9094/
+GET http://localhost:9094/
