@@ -3,3 +3,5 @@ source/package-lock.json
 source/src
 
 testing/
+testing/https
+testing/styles

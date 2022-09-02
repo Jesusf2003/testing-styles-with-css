@@ -7,11 +7,13 @@ const path = require('path');
 const appExpress = express();
 const router = express.Router();
 
+// Variables
 const port = process.env.PUERTO || 9094;
 
 // Implementando librerías
 appExpress.use(express.json());
 appExpress.use(cors());
+appExpress.use("/static/", express.static(path.join(__dirname, './src/')) );
 
 // Añadiendo funciones
 appExpress.listen(
@@ -43,6 +45,13 @@ appExpress.get(
     '/about',
     function(req, res) {
         res.sendFile(path.join(__dirname, '../dist/views/about.html'));
+    }
+);
+
+appExpress.get(
+    '/login',
+    function(req, res) {
+        res.sendFile(path.join(__dirname, '../dist/views/login.html'));
     }
 );
 
